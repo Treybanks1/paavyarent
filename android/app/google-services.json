@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "336809538774",
+    "project_id": "paavya-d9joeq",
+    "storage_bucket": "paavya-d9joeq.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336809538774:android:9eaf747bbe24ff55a90577",
+        "android_client_info": {
+          "package_name": "com.mycompany.paavya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336809538774-lvpemjo1jv49rm45cedva1sf15hro1cr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9JdepJugfW_0i8EAPCXeQAz6HXobUcJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336809538774-lvpemjo1jv49rm45cedva1sf15hro1cr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "336809538774-kidecu8t6upl2hso04kcg6l012a510n8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.paavya"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
