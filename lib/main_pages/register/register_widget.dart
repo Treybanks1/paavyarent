@@ -98,6 +98,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         .override(
                                           fontFamily: 'Urbanist',
                                           fontSize: 24.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ),
@@ -117,6 +118,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             fontFamily: 'Urbanist',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
+                                            letterSpacing: 0.0,
                                           ),
                                     ),
                                   ),
@@ -176,6 +178,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                 child: TextFormField(
                   controller: _model.textController1,
                   focusNode: _model.textFieldFocusNode1,
+                  autofocus: false,
                   obscureText: false,
                   decoration: InputDecoration(
                     labelText: 'Username',
@@ -183,6 +186,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                             ),
                     hintText: 'Enter username here',
@@ -190,6 +194,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Urbanist',
                               fontSize: 16.0,
+                              letterSpacing: 0.0,
                             ),
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -220,7 +225,11 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       borderRadius: BorderRadius.circular(0.0),
                     ),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Urbanist',
+                        letterSpacing: 0.0,
+                      ),
+                  minLines: null,
                   validator:
                       _model.textController1Validator.asValidator(context),
                 ),
@@ -230,6 +239,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                 child: TextFormField(
                   controller: _model.textController2,
                   focusNode: _model.textFieldFocusNode2,
+                  autofocus: false,
                   obscureText: false,
                   decoration: InputDecoration(
                     labelText: 'Email',
@@ -237,6 +247,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                             ),
                     hintText: 'Enter your email here',
@@ -244,6 +255,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Urbanist',
                               fontSize: 16.0,
+                              letterSpacing: 0.0,
                             ),
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -274,7 +286,11 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       borderRadius: BorderRadius.circular(0.0),
                     ),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Urbanist',
+                        letterSpacing: 0.0,
+                      ),
+                  minLines: null,
                   validator:
                       _model.textController2Validator.asValidator(context),
                 ),
@@ -284,6 +300,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                 child: TextFormField(
                   controller: _model.textController3,
                   focusNode: _model.textFieldFocusNode3,
+                  autofocus: false,
                   obscureText: !_model.passwordVisibility,
                   decoration: InputDecoration(
                     labelText: 'Create Password',
@@ -291,6 +308,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                             ),
                     hintText: 'Enter your password here',
@@ -298,6 +316,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Urbanist',
                               fontSize: 16.0,
+                              letterSpacing: 0.0,
                             ),
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -342,7 +361,11 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       ),
                     ),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Urbanist',
+                        letterSpacing: 0.0,
+                      ),
+                  minLines: null,
                   validator:
                       _model.textController3Validator.asValidator(context),
                 ),
@@ -365,6 +388,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Urbanist',
                           color: Colors.white,
+                          letterSpacing: 0.0,
                         ),
                     elevation: 0.0,
                     borderSide: const BorderSide(

@@ -86,6 +86,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     .override(
                                       fontFamily: 'Urbanist',
                                       fontSize: 24.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                     ),
                               ),
@@ -100,6 +101,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       fontFamily: 'Urbanist',
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
                                     ),
                               ),
@@ -116,6 +118,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 child: TextFormField(
                   controller: _model.textController1,
                   focusNode: _model.textFieldFocusNode1,
+                  autofocus: false,
                   obscureText: false,
                   decoration: InputDecoration(
                     labelText: 'Username / Email',
@@ -123,6 +126,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                             ),
                     hintText: 'Enter username or email here',
@@ -130,6 +134,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Urbanist',
                               fontSize: 16.0,
+                              letterSpacing: 0.0,
                             ),
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -160,7 +165,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                       borderRadius: BorderRadius.circular(0.0),
                     ),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Urbanist',
+                        letterSpacing: 0.0,
+                      ),
+                  minLines: null,
                   validator:
                       _model.textController1Validator.asValidator(context),
                 ),
@@ -170,6 +179,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 child: TextFormField(
                   controller: _model.textController2,
                   focusNode: _model.textFieldFocusNode2,
+                  autofocus: false,
                   obscureText: !_model.passwordVisibility,
                   decoration: InputDecoration(
                     labelText: 'Password',
@@ -177,6 +187,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).primaryText,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                             ),
                     hintText: 'Enter your password here',
@@ -184,6 +195,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Urbanist',
                               fontSize: 16.0,
+                              letterSpacing: 0.0,
                             ),
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -228,7 +240,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                       ),
                     ),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Urbanist',
+                        letterSpacing: 0.0,
+                      ),
+                  minLines: null,
                   validator:
                       _model.textController2Validator.asValidator(context),
                 ),
@@ -243,6 +259,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       'Forgot Password?',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Urbanist',
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -267,6 +284,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Urbanist',
                           color: Colors.white,
+                          letterSpacing: 0.0,
                         ),
                     elevation: 0.0,
                     borderSide: const BorderSide(
@@ -289,6 +307,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             fontFamily: 'Urbanist',
                             color: FlutterFlowTheme.of(context).secondaryText,
                             fontSize: 12.0,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
                           ),
                     ),
@@ -317,6 +336,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Urbanist',
                           color: FlutterFlowTheme.of(context).secondaryText,
+                          letterSpacing: 0.0,
                         ),
                     elevation: 0.0,
                     borderSide: BorderSide(
@@ -335,7 +355,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                   children: [
                     Text(
                       'Don\'t have an account?',
-                      style: FlutterFlowTheme.of(context).bodyMedium,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Urbanist',
+                            letterSpacing: 0.0,
+                          ),
                     ),
                     Padding(
                       padding:
@@ -353,6 +376,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Urbanist',
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
                         ),
