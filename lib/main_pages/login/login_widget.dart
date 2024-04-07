@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -23,10 +24,10 @@ class _LoginWidgetState extends State<LoginWidget> {
     super.initState();
     _model = createModel(context, () => LoginModel());
 
-    _model.textController1 ??= TextEditingController();
+    _model.emailTextController ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -116,12 +117,12 @@ class _LoginWidgetState extends State<LoginWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
                 child: TextFormField(
-                  controller: _model.textController1,
+                  controller: _model.emailTextController,
                   focusNode: _model.textFieldFocusNode1,
                   autofocus: false,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Username / Email',
+                    labelText: 'Email',
                     labelStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Urbanist',
@@ -129,7 +130,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
                             ),
-                    hintText: 'Enter username or email here',
+                    hintText: 'Enter email here',
                     hintStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
                               fontFamily: 'Urbanist',
@@ -171,13 +172,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                       ),
                   minLines: null,
                   validator:
-                      _model.textController1Validator.asValidator(context),
+                      _model.emailTextControllerValidator.asValidator(context),
                 ),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
                 child: TextFormField(
-                  controller: _model.textController2,
+                  controller: _model.passwordTextController,
                   focusNode: _model.textFieldFocusNode2,
                   autofocus: false,
                   obscureText: !_model.passwordVisibility,
@@ -245,8 +246,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                         letterSpacing: 0.0,
                       ),
                   minLines: null,
-                  validator:
-                      _model.textController2Validator.asValidator(context),
+                  validator: _model.passwordTextControllerValidator
+                      .asValidator(context),
                 ),
               ),
               Padding(
@@ -269,8 +270,29 @@ class _LoginWidgetState extends State<LoginWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    GoRouter.of(context).prepareAuthEvent();
+
+                    final user = await authManager.signInWithEmail(
+                      context,
+                      _model.emailTextController.text,
+                      _model.passwordTextController.text,
+                    );
+                    if (user == null) {
+                      return;
+                    }
+
+                    context.pushNamedAuth(
+                      'homepage',
+                      context.mounted,
+                      extra: <String, dynamic>{
+                        kTransitionInfoKey: const TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.fade,
+                          duration: Duration(milliseconds: 500),
+                        ),
+                      },
+                    );
                   },
                   text: 'Login',
                   options: FFButtonOptions(
@@ -280,7 +302,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: const Color(0xFF191D2B),
+                    color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Urbanist',
                           color: Colors.white,
@@ -373,12 +395,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                         },
                         child: Text(
                           'Register Here',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Urbanist',
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Urbanist',
+                                color: FlutterFlowTheme.of(context).secondary,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                              ),
                         ),
                       ),
                     ),

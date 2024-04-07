@@ -1,0 +1,18 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "workorder",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "order_active",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "time_created",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
+}

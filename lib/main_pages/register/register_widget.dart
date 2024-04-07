@@ -53,10 +53,19 @@ class _RegisterWidgetState extends State<RegisterWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
-          leading: Icon(
-            Icons.arrow_back_ios_new_rounded,
-            color: FlutterFlowTheme.of(context).primaryText,
-            size: 24.0,
+          leading: InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              context.pushNamed('login');
+            },
+            child: Icon(
+              Icons.arrow_back_ios_new_rounded,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 24.0,
+            ),
           ),
           actions: const [],
           centerTitle: false,
@@ -384,7 +393,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: const Color(0xFF191D2B),
+                    color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Urbanist',
                           color: Colors.white,
